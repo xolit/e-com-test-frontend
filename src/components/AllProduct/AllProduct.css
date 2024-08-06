@@ -1,0 +1,88 @@
+.product-container {
+  padding: 20px;
+}
+
+.searchProduct{
+  height: 20px;
+  width: 218px;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+  margin: 9px;
+  padding: 4px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.table-head-data,
+.table-body-data {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table-head {
+  background-color: #f2f2f2;
+}
+
+.table-body tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.table-body tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .table,
+  .table-head,
+  .table-body,
+  .table-head tr,
+  .table-body tr,
+  .table-head-data,
+  .table-body-data {
+    display: block;
+    width: 100%;
+  }
+
+  .table-head {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table-body-data {
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table-body-data::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+  }
+
+  .table-body-data[data-label="S no."]::before {
+    content: "S no.";
+  }
+  .table-body-data[data-label="Name"]::before {
+    content: "Name";
+  }
+  .table-body-data[data-label="Price"]::before {
+    content: "Price";
+  }
+  .table-body-data[data-label="Category"]::before {
+    content: "Category";
+  }
+}
